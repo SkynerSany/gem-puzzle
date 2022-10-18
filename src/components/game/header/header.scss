@@ -1,0 +1,34 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.header__autoSolve {
+
+}
+
+.header__time {
+
+}
+
+.header__timeMinutes {
+
+}
+
+.header__timeSeconds {
+
+}
+
+.header__steps {
+
+}
+
+.header__stepsCount {
+
+}
+
+.header__pause {
+
+}

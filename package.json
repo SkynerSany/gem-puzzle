@@ -1,0 +1,31 @@
+{
+  "name": "gem-puzzle",
+  "version": "1.0.0",
+  "description": "[Deploy](https://rolling-scopes-school.github.io/skynersany-JSFE2022Q3)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/skynersany-JSFE2022Q3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/skynersany-JSFE2022Q3/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/skynersany-JSFE2022Q3#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "node-sass": "^7.0.3",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1"
+  }
+}
