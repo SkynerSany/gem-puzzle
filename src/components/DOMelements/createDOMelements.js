@@ -41,7 +41,7 @@ export default class CreateDomElement {
     })
 
     repeatableItems.forEach((itemIndex) => {
-      for (let i = 0; i < repeat - 1; i++) {
+      for (let i = 0; i < repeat**2 - 1; i++) {
         const item = HTMLelements[itemIndex].cloneNode(true);
         HTMLelements[itemIndex].parentNode.append(item);
       }

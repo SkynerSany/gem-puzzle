@@ -4,7 +4,7 @@ const items = [
   {
     tag: 'div',
     attributes: {
-      class: 'game__container',
+      class: 'game',
     },
   },
   {

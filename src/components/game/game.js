@@ -1,36 +1,41 @@
-import * as gameData from '../data/game.data';
-import CreateDomElement from '../DOMelements/createDOMelements';
+import Board from "./board/board";
+import GameEvents from "./gameEvents";
+import Header from "./header/header";
 
 export default class Game {
   constructor() {
 
   }
 
-  getNumbers() {
-    let numbers = [];
-    for (let i = 0; i < this.size; i += 1) {
-      numbers[i] = i;
-    }
+  step = 0;
+  time = {
+    minutes: 0,
+    seconds: 0,
+  };
+  size = 2;
+  type = 'number';
+  sound = '';
 
-    return numbers.sort(() => 0.5 - Math.random());
+  setNewGame() {
+    this.setDefault();
+    
+    this.gameEvents = new GameEvents(this);
+    this.board = new Board(this);
+    this.header = new Header(this);
+
+    this.header.setEvents();
+    this.board.createBoard();
+    this.gameEvents.setEvents();
   }
 
-  setNumbers(numbers) {
-    const planks = document.querySelectorAll('.game__chip')
-
-    planks.forEach((plank, i) => {
-      plank.setAttribute('data-id', numbers[i]);
-      plank.textContent = numbers[i] ? numbers[i] : '';
-
-      if (!numbers[i]) plank.classList.toggle('game__chip-clear');
-    })
+  setDefault() {
+    this.step = 0;
+    this.time = {
+      minutes: 0,
+      seconds: 0,
+    };
+    this.size = 2;
+    this.type = 'number';
+    this.sound = '';
   }
-
-  createBoard(size = 16) {
-    this.size = size;
-    new CreateDomElement(gameData, '.game').addToDOM(size);
-
-    const numbersArr = this.getNumbers();
-    this.setNumbers(numbersArr);
-  }
-};
+}

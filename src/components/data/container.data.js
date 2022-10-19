@@ -10,7 +10,7 @@ const items = [
   {
     tag: 'section',
     attributes: {
-      class: 'game',
+      class: 'container',
     },
     parent: 0,
   },

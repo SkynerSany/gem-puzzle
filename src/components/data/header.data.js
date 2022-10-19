@@ -1,7 +1,7 @@
 const itemsData = {
   header__autoSolve: 'Auto solve',
-  header__time: 'Time <span class="header__timeMinutes"></span> : <span class="header__timeSeconds"></span>',
-  header__steps: 'Steps <span class="header__stepsCount"></span>',
+  header__time: 'Time <span class="header__timer">00 : 00</span>',
+  header__steps: 'Steps <span class="header__stepsCount">0</span>',
   header__pause: 'Pause game'
 };
 

@@ -3,15 +3,13 @@ import * as containerData from './data/container.data';
 import CreateDomElement from './DOMelements/createDOMelements';
 import Header from './game/header/header';
 import Game from './game/game';
-import GameEvents from './game/gameEvents';
+import Menu from './menu/menu';
 
 const createContainer = new CreateDomElement(containerData, 'body');
-const header = new Header();
 const newGame = new Game();
-const gameEvents = new GameEvents();
+const menu = new Menu(newGame);
 
 
 createContainer.addToDOM();
-header.createHeader();
-newGame.createBoard();
-gameEvents.setEvents();
+newGame.setNewGame();
+menu.setEvents();
