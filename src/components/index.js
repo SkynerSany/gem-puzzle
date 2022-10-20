@@ -1,7 +1,6 @@
 import './index.scss';
 import * as containerData from './data/container.data';
 import CreateDomElement from './DOMelements/createDOMelements';
-import Header from './game/header/header';
 import Game from './game/game';
 import Menu from './menu/menu';
 

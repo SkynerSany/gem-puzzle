@@ -1,5 +1,3 @@
-import Header from "./header/header";
-
 export default class GameEvents {
   constructor(game) {
     this.game = game;
@@ -29,7 +27,7 @@ export default class GameEvents {
     return chip ? [chipPos, clearChipPos] : clearChipPos;
   }
 
-  isNeighbors(chip) {
+  isNeighbors(chip, type) {
     if (!chip.classList.contains('game__chip') || chip.dataset.id === '0') return false;
     
     const [indexOfChip, indexOfClearChip] = this.checkPosition(chip);
@@ -42,7 +40,7 @@ export default class GameEvents {
 
     if (!Object.values(neighbors).includes(indexOfClearChip)) return false;
 
-    return true;
+    return type ? Object.values(neighbors) : true;
   }
 
   setAnimateChipChange(chip) {
@@ -83,6 +81,7 @@ export default class GameEvents {
 
   changeChip(chip) {
     const newChip = this.setAnimateChipChange(chip);
+    this.clearChip = document.querySelector('.game__chip-clear');
 
     this.clearChip.classList.toggle('game__chip-clear');
     this.clearChip.dataset.id = chip.dataset.id;

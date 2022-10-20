@@ -40,9 +40,14 @@ export default class Header {
     clearInterval(this.timer);
   }
 
+  startAutoSolve() {
+    this.game.autoSolve.startSolve();
+  }
+
   setEvents() {
     this.createHeader();
     document.querySelector('.header__pause').addEventListener("click", () => this.pauseGame());
+    document.querySelector('.header__autoSolve').addEventListener("click", () => this.startAutoSolve());
   }
 
   createHeader() {

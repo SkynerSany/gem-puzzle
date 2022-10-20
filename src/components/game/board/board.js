@@ -8,19 +8,20 @@ export default class Board {
   }
 
   isSolvable(arr) {
-    const clearChipPos = Math.floor(arr.indexOf(0) / this.game.size);
-    let result = 0;
-    arr.forEach((item, i) => {
-      let count = 0;
-      for (let j = i; j < arr.length - 1; j++) {
-        if (item > arr[j] && item !== 0 && arr[j] !== 0) {
-          count++;
-        }
+    const filterArr = arr.filter(item => item !== 0);
+    const clearChipPos = this.game.size + 1 - Math.ceil((arr.indexOf(0) + 1) / this.game.size);
+    let count = 0;
+    for (let i = 0; i < filterArr.length - 1; i++) {
+      for (let j = i + 1; j < filterArr.length; j++) {
+        if (filterArr[i] > filterArr[j]) count++;
       }
-      result += count + clearChipPos;
-    })
-    console.log(result)
-    return result % 2 === 0 ? true : false;
+    }
+    console.log(arr, count, clearChipPos);
+    if (this.game.size % 2 === 0) {
+      return (clearChipPos % 2 === 0 && count % 2 !== 0) || (clearChipPos % 2 !== 0 && count % 2 === 0);
+    }
+    
+    return count % 2 === 0;
   }
 
   getNumbers() {

@@ -1,3 +1,4 @@
+import AutoSolve from "./autoSolve";
 import Board from "./board/board";
 import GameEvents from "./gameEvents";
 import Header from "./header/header";
@@ -12,17 +13,18 @@ export default class Game {
     minutes: 0,
     seconds: 0,
   };
-  size = 2;
+  size = 4;
   type = 'number';
   sound = '';
 
   setNewGame() {
     this.setDefault();
     
-    this.gameEvents = new GameEvents(this);
     this.board = new Board(this);
     this.header = new Header(this);
-
+    this.autoSolve = new AutoSolve(this);
+    this.gameEvents = new GameEvents(this);
+    
     this.header.setEvents();
     this.board.createBoard();
     this.gameEvents.setEvents();
@@ -34,7 +36,7 @@ export default class Game {
       minutes: 0,
       seconds: 0,
     };
-    this.size = 2;
+    this.size = 4;
     this.type = 'number';
     this.sound = '';
   }
