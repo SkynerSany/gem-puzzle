@@ -1,0 +1,108 @@
+.greeting {
+  height: 600px;
+  width: 600px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+
+  z-index: 1;
+}
+
+.greeting__titleContainer {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.greeting__name {
+
+}
+
+.greeting__title {
+  
+}
+
+.greeting__soundContainer {
+  width: 100%;
+
+  display: flex;
+}
+
+.greeting__sound {
+  margin: 0 20px 0 0;
+
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.greeting__btnSound {
+  height: 40px;
+  width: 80px;
+}
+
+.greeting__chipTypeContainer {
+  width: 100%;
+}
+
+.greeting__chipTypeTitle {
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.greeting__types {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.greeting__chipType {
+  height: 80px;
+  width: 80px;
+  background-color: #fff;
+}
+
+.greeting__sizeContainer {
+  width: 100%;
+}
+
+.greeting__sizeTitle {
+  margin: 0 0 20px;
+
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.greeting__sizes {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+
+  button {
+    height: 50px;
+
+    font-size: 20px;
+  }
+}
+
+.greeting__size {
+  
+}
+
+.greeting__btnSave {
+  height: 55px;
+  width: 60%;
+
+  margin-top: 20px;
+
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+}

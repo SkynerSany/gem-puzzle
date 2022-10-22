@@ -1,12 +1,7 @@
 export default class CreateDomElement {
-  constructor(data, parent) {
-    this.items = data.items;
-    this.itemsData = data.itemsData;
-    this.parent = parent;
-  }
-
   tagTypes = {
     p: 'innerHTML',
+    span: 'textContent',
     img: 'src',
     button: 'textContent',
   }
@@ -50,8 +45,13 @@ export default class CreateDomElement {
     return HTMLelements[0];
   }
 
-  addToDOM(repeat) {
-    this.parent = document.querySelector(this.parent)
-    this.parent.append(this.createElements(repeat));
+  addToDOM(data, parent, repeat) {
+    this.items = data.items;
+    this.itemsData = data.itemsData;
+    this.parent = document.querySelector(parent);
+
+    const element = this.createElements(repeat);
+    this.parent.append(element);
+    return element;
   }
 };

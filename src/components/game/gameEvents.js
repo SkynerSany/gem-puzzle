@@ -6,23 +6,24 @@ export default class GameEvents {
   isEnd() {
     let resultArr = [];
     let result = true;
-    this.allChips.forEach(chip => {
-      resultArr.push(+chip.dataset.id);
+
+    Array.from(document.querySelectorAll('.game__chip')).forEach(chip => {
+      if (!chip.classList.contains('game__chip-animated')) resultArr.push(+chip.dataset.id);
     })
 
-    for (let i = 1; i < resultArr.length - 1; i++) {
-      if (resultArr[i - 1] !== i) return false;
+    for (let i = 0; i < resultArr.length - 1; i++) {
+      if (resultArr[i] !== i + 1) return false;
     }
 
     return result;
   }
 
   checkPosition(chip) {
-    this.clearChip = document.querySelector('.game__chip-clear');
-    this.allChips = Array.from(document.querySelectorAll('.game__chip'));
+    const clearChip = document.querySelector('.game__chip-clear');
+    const allChips = Array.from(document.querySelectorAll('.game__chip'));
 
-    const chipPos = this.allChips.indexOf(chip);
-    const clearChipPos = this.allChips.indexOf(this.clearChip)
+    const chipPos = allChips.indexOf(chip);
+    const clearChipPos = allChips.indexOf(clearChip)
 
     return chip ? [chipPos, clearChipPos] : clearChipPos;
   }
@@ -74,26 +75,30 @@ export default class GameEvents {
     if (!this.isNeighbors(chip)) return;
 
     this.changeChip(chip);
-    this.game.header.setStep();
-
-    if (this.isEnd()) console.log('end');
   }
 
   changeChip(chip) {
     const newChip = this.setAnimateChipChange(chip);
-    this.clearChip = document.querySelector('.game__chip-clear');
+    const clearChip = document.querySelector('.game__chip-clear');
 
-    this.clearChip.classList.toggle('game__chip-clear');
-    this.clearChip.dataset.id = chip.dataset.id;
-    this.clearChip.textContent = chip.textContent;
+    clearChip.classList.toggle('game__chip-clear');
+    clearChip.dataset.id = chip.dataset.id;
+    clearChip.textContent = chip.textContent;
 
     chip.classList.toggle('game__chip-clear');
     chip.dataset.id = '0';
     chip.textContent = '';
 
-    this.clearChip.style.opacity = 0;
+    clearChip.style.opacity = 0;
+    
+    this.removeAnimateChipChange(newChip, clearChip);
 
-    this.removeAnimateChipChange(newChip, this.clearChip);
+    this.game.header.addStep();
+
+    if (this.isEnd()) {
+      this.game.header.stopTimer();
+      this.game.finish.setWindow();
+    }
   }
 
   setEvents() {

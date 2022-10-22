@@ -14,7 +14,12 @@ export default class Header {
     this.stopTimer();
   }
 
+  
   setStep() {
+    document.querySelector('.header__stepsCount').textContent = this.game.step;
+  }
+
+  addStep() {
     document.querySelector('.header__stepsCount').textContent = ++this.game.step;
   }
 
@@ -28,12 +33,15 @@ export default class Header {
   setTimer() {
     this.timer = setInterval(() => {
       this.setMinutes(++this.game.time.seconds);
-
-      const minutes = `${this.game.time.minutes}`.padStart(2, '0');
-      const seconds = `${this.game.time.seconds}`.padStart(2, '0');
-
-      document.querySelector('.header__timer').textContent = `${minutes} : ${seconds}`;
+      this.setTime();
     }, 1000);
+  }
+
+  setTime() {
+    const minutes = `${this.game.time.minutes}`.padStart(2, '0');
+    const seconds = `${this.game.time.seconds}`.padStart(2, '0');
+
+    document.querySelector('.header__timer').textContent = `${minutes} : ${seconds}`;
   }
 
   stopTimer() {
@@ -51,9 +59,11 @@ export default class Header {
   }
 
   createHeader() {
-    const createHeader = new CreateDomElement(headerData, '.container');
+    const createHeader = new CreateDomElement();
     this.menu = new Menu();
 
-    createHeader.addToDOM();
+    createHeader.addToDOM(headerData, '.container');
+    this.setStep();
+    this.setTime();
   }
 };

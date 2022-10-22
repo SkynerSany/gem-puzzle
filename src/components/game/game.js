@@ -1,42 +1,28 @@
 import AutoSolve from "./autoSolve";
 import Board from "./board/board";
+import Finish from "../finish/finish";
 import GameEvents from "./gameEvents";
 import Header from "./header/header";
 
 export default class Game {
-  constructor() {
-
-  }
-
-  step = 0;
-  time = {
-    minutes: 0,
-    seconds: 0,
-  };
-  size = 4;
-  type = 'number';
-  sound = '';
-
-  setNewGame() {
-    this.setDefault();
+  setNewGame(size, step, time, chipsArr) {
+    this.setDefault(size, step, time);
     
     this.board = new Board(this);
     this.header = new Header(this);
     this.autoSolve = new AutoSolve(this);
     this.gameEvents = new GameEvents(this);
+    this.finish = new Finish(this);
     
     this.header.setEvents();
-    this.board.createBoard();
+    this.board.createBoard(chipsArr);
     this.gameEvents.setEvents();
   }
 
-  setDefault() {
-    this.step = 0;
-    this.time = {
-      minutes: 0,
-      seconds: 0,
-    };
-    this.size = 4;
+  setDefault(size = 3, step = 0, time = { minutes: 0, seconds: 0 }) {
+    this.step = step;
+    this.time = time;
+    this.size = size;
     this.type = 'number';
     this.sound = '';
   }
