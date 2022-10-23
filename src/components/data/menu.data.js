@@ -17,49 +17,49 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'menu__btnSave',
+      class: 'menu__btnSave btnAnimated',
     },
     parent: 0,
   },
   {
     tag: 'button',
     attributes: {
-      class: 'menu__btnResume',
+      class: 'menu__btnResume btnAnimated',
     },
     parent: 0,
   },
   {
     tag: 'button',
     attributes: {
-      class: 'menu__btnStart',
+      class: 'menu__btnStart btnAnimated',
     },
     parent: 0,
   },
   {
     tag: 'button',
     attributes: {
-      class: 'menu__btnSavedGames',
+      class: 'menu__btnSavedGames btnAnimated',
     },
     parent: 0,
   },
   {
     tag: 'button',
     attributes: {
-      class: 'menu__btnScore',
+      class: 'menu__btnScore btnAnimated',
     },
     parent: 0,
   },
   {
     tag: 'button',
     attributes: {
-      class: 'menu__btnRules',
+      class: 'menu__btnRules btnAnimated',
     },
     parent: 0,
   },
   {
     tag: 'button',
     attributes: {
-      class: 'menu__btnSettings',
+      class: 'menu__btnSettings btnAnimated',
     },
     parent: 0,
   },

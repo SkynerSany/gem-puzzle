@@ -52,6 +52,10 @@ export default class Header {
     this.game.autoSolve.startSolve();
   }
 
+  setAuto() {
+    if (this.game.size > 3) document.querySelector('.header__autoSolve').disabled = true;
+  }
+
   setEvents() {
     this.createHeader();
     document.querySelector('.header__pause').addEventListener("click", () => this.pauseGame());
@@ -63,6 +67,7 @@ export default class Header {
     this.menu = new Menu();
 
     createHeader.addToDOM(headerData, '.container');
+    this.setAuto();
     this.setStep();
     this.setTime();
   }

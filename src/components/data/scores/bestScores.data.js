@@ -37,7 +37,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'scores__btnSize3',
+      class: 'scores__btnSize3 scores__btnSize btnAnimated',
       "data-size": 3,
     },
     parent: 2,
@@ -45,7 +45,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'scores__btnSize4',
+      class: 'scores__btnSize4 scores__btnSize btnAnimated',
       "data-size": 4,
     },
     parent: 2,
@@ -53,7 +53,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'scores__btnSize5',
+      class: 'scores__btnSize5 scores__btnSize btnAnimated',
       "data-size": 5,
     },
     parent: 2,
@@ -61,7 +61,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'scores__btnSize6',
+      class: 'scores__btnSize6 scores__btnSize btnAnimated',
       "data-size": 6,
     },
     parent: 2,
@@ -69,7 +69,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'scores__btnSize7',
+      class: 'scores__btnSize7 scores__btnSize btnAnimated',
       "data-size": 7,
     },
     parent: 2,
@@ -77,10 +77,17 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'scores__btnSize8',
+      class: 'scores__btnSize8 scores__btnSize btnAnimated',
       "data-size": 8,
     },
     parent: 2,
+  },
+  {
+    tag: 'div',
+    attributes: {
+      class: 'scores__tableHeader',
+    },
+    parent: 0,
   },
   {
     tag: 'div',
@@ -90,44 +97,37 @@ const items = [
     parent: 0,
   },
   {
-    tag: 'div',
+    tag: 'p',
     attributes: {
-      class: 'scores__tableHeader',
+      class: 'scores__tableNumber',
     },
     parent: 9,
   },
   {
     tag: 'p',
     attributes: {
-      class: 'scores__tableNumber',
-    },
-    parent: 10,
-  },
-  {
-    tag: 'p',
-    attributes: {
       class: 'scores__tableSize',
     },
-    parent: 10,
+    parent: 9,
   },
   {
     tag: 'p',
     attributes: {
       class: 'scores__tableStep',
     },
-    parent: 10,
+    parent: 9,
   },
   {
     tag: 'p',
     attributes: {
       class: 'scores__tableTime',
     },
-    parent: 10,
+    parent: 9,
   },
   {
     tag: 'button',
     attributes: {
-      class: 'scores__btnClose',
+      class: 'scores__btnClose btnAnimated',
     },
     parent: 0,
   },

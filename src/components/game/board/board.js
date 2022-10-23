@@ -16,7 +16,6 @@ export default class Board {
         if (filterArr[i] > filterArr[j]) count++;
       }
     }
-    console.log(arr, count, clearChipPos);
     if (this.game.size % 2 === 0) {
       return (clearChipPos % 2 === 0 && count % 2 !== 0) || (clearChipPos % 2 !== 0 && count % 2 === 0);
     }
@@ -53,8 +52,12 @@ export default class Board {
     planks.forEach((plank, i) => {
       plank.setAttribute('data-id', numbers[i]);
       plank.textContent = numbers[i] ? numbers[i] : '';
-
-      if (!numbers[i]) plank.classList.toggle('game__chip-clear');
+      if (!numbers[i]) {
+        plank.classList.toggle('game__chip-clear');
+        return;
+      }
+      plank.setAttribute('draggable', true);
+      plank.classList.toggle(`chip-${this.game.type}`);
     })
   }
 

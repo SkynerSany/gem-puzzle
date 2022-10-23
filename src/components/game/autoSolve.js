@@ -121,7 +121,6 @@ export default class AutoSolve {
       
       result = this.search(0, -1, this.x0, this.y0);
       this.deepness = this.minPrevIteration;
-      console.log(123)
       if (result) break;
     }
 
@@ -131,7 +130,6 @@ export default class AutoSolve {
   checkResult() {
     if (this.idaStar()) {
       let i = 0;
-      console.log(this.resultArr, 'asd');
       const inteval = setInterval(() => {
         const emptyChip = document.querySelector('[data-id="0"]');
         const neighbor = this.getNeighbor(emptyChip);
@@ -156,6 +154,5 @@ export default class AutoSolve {
     this.createBoardGoal();
     this.checkChipPos();
     this.checkResult();
-    console.log(this);
   }
 }

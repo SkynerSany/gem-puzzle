@@ -44,6 +44,11 @@ export default class GameEvents {
     return type ? Object.values(neighbors) : true;
   }
 
+  playSound() {
+    let audio = new Audio('./src/assets/audio/3.mp3');
+    audio.play();
+  }
+
   setAnimateChipChange(chip) {
     const newChip = chip.cloneNode(true);
 
@@ -77,23 +82,31 @@ export default class GameEvents {
     this.changeChip(chip);
   }
 
-  changeChip(chip) {
-    const newChip = this.setAnimateChipChange(chip);
+  changeChip(chip, type) {
+    let newChip;
+    if (!type) newChip = this.setAnimateChipChange(chip);
     const clearChip = document.querySelector('.game__chip-clear');
 
     clearChip.classList.toggle('game__chip-clear');
+    clearChip.classList.toggle(`chip-${this.game.type}`);
+    clearChip.draggable = true;
     clearChip.dataset.id = chip.dataset.id;
     clearChip.textContent = chip.textContent;
 
     chip.classList.toggle('game__chip-clear');
+    chip.classList.toggle(`chip-${this.game.type}`);
+    chip.draggable = false;
     chip.dataset.id = '0';
     chip.textContent = '';
 
-    clearChip.style.opacity = 0;
-    
-    this.removeAnimateChipChange(newChip, clearChip);
+    if (!type) {
+      clearChip.style.opacity = 0;
+      this.removeAnimateChipChange(newChip, clearChip);
+    }
 
     this.game.header.addStep();
+
+    if (this.game.sound) this.playSound();
 
     if (this.isEnd()) {
       this.game.header.stopTimer();
@@ -105,5 +118,22 @@ export default class GameEvents {
     this.gameContainer = document.querySelector('.game');
 
     this.gameContainer.addEventListener("click", (e) => this.clickOnChip(e));
+    this.gameContainer.addEventListener('dragstart', (e) => {
+      if (this.isNeighbors(e.target)) {
+        this.dragTarget = e.target;
+      } else {
+        e.preventDefault();
+      }
+    });
+
+    this.gameContainer.addEventListener('drop', (e) => {
+      if (e.target.classList.contains('game__chip-clear')) {
+        this.changeChip(this.dragTarget, e.type);
+      }
+    });
+
+    this.gameContainer.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    });
   }
 };

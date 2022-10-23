@@ -33,7 +33,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'saved__saveLoad',
+      class: 'saved__saveLoad btnAnimated',
     },
     parent: 0,
   },

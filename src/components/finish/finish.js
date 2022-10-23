@@ -25,6 +25,7 @@ export default class Finish {
     if (!score[this.game.size]) score[this.game.size] = [];
     
     score[this.game.size].push({
+      name: this.game.name,
       step: this.game.step,
       time: this.game.time,
     });

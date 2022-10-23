@@ -27,14 +27,14 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'finish__newGame',
+      class: 'finish__newGame btnAnimated',
     },
     parent: 2,
   },
   {
     tag: 'button',
     attributes: {
-      class: 'finish__close',
+      class: 'finish__close btnAnimated',
     },
     parent: 2,
   },

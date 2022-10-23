@@ -1,4 +1,6 @@
 .header {
+  margin: 20px;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
@@ -8,29 +10,33 @@
 }
 
 .header__autoSolve {
+  font-size: 20px;
+  box-shadow: none;
+  &:disabled {
+    background: #8f8f8f;
+    color: #ffffff;
+    cursor: default;
 
+    &::after {
+      display:none;
+    }
+
+    &::before {
+      display:none;
+    }
+  }
 }
 
 .header__time {
   text-align: center;
-}
-
-.header__timeMinutes {
-
-}
-
-.header__timeSeconds {
-
+  color: #ffffff;
 }
 
 .header__steps {
   text-align: center;
-}
-
-.header__stepsCount {
-
+  color: #ffffff;
 }
 
 .header__pause {
-
+  font-size: 20px;
 }

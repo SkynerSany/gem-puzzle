@@ -13,8 +13,8 @@ export default class CreateDomElement {
       tag.setAttribute(key, item.attributes[key]);
     }
 
-    if(Object.keys(this.itemsData).includes(tag.className)) {
-      tag[this.tagTypes[item.tag]] = this.itemsData[tag.className];
+    if(Object.keys(this.itemsData).includes(tag.classList[0])) {
+      tag[this.tagTypes[item.tag]] = this.itemsData[tag.classList[0]];
     }
 
     return tag;

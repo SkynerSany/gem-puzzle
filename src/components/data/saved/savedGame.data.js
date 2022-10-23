@@ -24,49 +24,49 @@ const items = [
   {
     tag: 'div',
     attributes: {
-      class: 'saved__table',
+      class: 'saved__tableHeader',
     },
     parent: 0,
   },
   {
     tag: 'div',
     attributes: {
-      class: 'saved__tableHeader',
+      class: 'saved__table',
     },
-    parent: 2,
+    parent: 0,
   },
   {
     tag: 'p',
     attributes: {
       class: 'saved__tableSize',
     },
-    parent: 3,
+    parent: 2,
   },
   {
     tag: 'p',
     attributes: {
       class: 'saved__tableStep',
     },
-    parent: 3,
+    parent: 2,
   },
   {
     tag: 'p',
     attributes: {
       class: 'saved__tableTime',
     },
-    parent: 3,
+    parent: 2,
   },
   {
     tag: 'p',
     attributes: {
       class: 'saved__tableLoad',
     },
-    parent: 3,
+    parent: 2,
   },
   {
     tag: 'button',
     attributes: {
-      class: 'saved__btnClose',
+      class: 'saved__btnClose btnAnimated',
     },
     parent: 0,
   },

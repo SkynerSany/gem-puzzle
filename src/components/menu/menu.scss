@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
 
   z-index: 1;
 
@@ -17,22 +17,37 @@
     height: 60px;
     width: 300px;
 
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    font-size: 24px;
+    color: #00C4F0;
+    background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
 
-    cursor: pointer;
+    &::after {
+      background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
+    }
   }
 
   .menu__btnSave {
     height: 60px;
     width: 60px;
-  
+    
     position: absolute;
     top: 10px;
     left: 10px;
+    background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
+    
+    &::after {
+      background-image: url(../../assets/icons/save_icon.svg);
+      background-color: #414141;
+      background-size: 40px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:active {
+      &:after {
+        background-color: transparent;
+      }
+    }
   }
 }
 

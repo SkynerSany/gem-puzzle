@@ -11,9 +11,20 @@ export default class BestScore {
   changeScoreSize(e) {
     if (e.target.tagName !== 'BUTTON') return;
 
+    this.changeActiveBtn(e.target);
     this.scoreSize = e.target.dataset.size;
     this.removeScore();
     this.setScores();
+  }
+
+  changeActiveBtn(btn) {
+    document.querySelector(`.scores__btnSize.btnAnimated-active`).classList.toggle('btnAnimated-active');
+
+    btn.classList.toggle('btnAnimated-active');
+  }
+
+  setActiveScore() {
+    document.querySelector('.scores__btnSize3').classList.toggle('btnAnimated-active');
   }
 
   setEvents() {
@@ -36,7 +47,7 @@ export default class BestScore {
     this.scores[this.scoreSize]?.forEach((item, i) => {
       const score = this.createDOM.addToDOM(scoreData, '.scores__table').childNodes;
       score[0].textContent = i + 1;
-      score[1].textContent = item.size;
+      score[1].textContent = item.name;
       score[2].textContent = item.step;
       score[3].textContent = `${item.time.minutes}`.padStart(2, '0') + ' : ' + `${item.time.seconds}`.padStart(2, '0');
     });
@@ -49,5 +60,6 @@ export default class BestScore {
     this.createDOM.addToDOM(bestScoresData, '.container');
     this.setEvents();
     this.loadScores();
+    this.setActiveScore();
   }
 };

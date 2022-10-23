@@ -26,7 +26,7 @@ export default class SavedGame {
       save[1].textContent = item.step;
       save[2].textContent = `${item.time.minutes}`.padStart(2, '0') + ' : ' + `${item.time.seconds}`.padStart(2, '0');
       save[3].addEventListener('click', () => {
-        this.menu.startNewGame(item.size, item.step, item.time, item.chipsArr);
+        this.menu.startNewGame(item.size, item.step, item.time, item.chipsArr, item.type, item.sound);
         this.clickClose();
       })
     });

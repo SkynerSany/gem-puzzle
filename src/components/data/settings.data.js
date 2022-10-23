@@ -1,43 +1,42 @@
 const itemsData = {
-  greeting__title: 'Hello, ',
-  greeting__name: '[Your Name]',
-  greeting__sound: 'Sound',
-  greeting__chipTypeTitle: 'Chip Type:',
-  greeting__sizeTitle: 'Size:',
-  greeting__size3: '3 x 3',
-  greeting__size4: '4 x 4',
-  greeting__size5: '5 x 5',
-  greeting__size6: '6 x 6',
-  greeting__size7: '7 x 7',
-  greeting__size8: '8 x 8',
-  greeting__btnSave: 'Save',
+  settings__title: 'Hello, ',
+  settings__sound: 'Sound',
+  settings__chipTypeTitle: 'Chip Type:',
+  settings__sizeTitle: 'Size:',
+  settings__size3: '3 x 3',
+  settings__size4: '4 x 4',
+  settings__size5: '5 x 5',
+  settings__size6: '6 x 6',
+  settings__size7: '7 x 7',
+  settings__size8: '8 x 8',
+  settings__btnSave: 'Save',
 };
 
 const items = [
   {
     tag: 'div',
     attributes: {
-      class: 'greeting',
+      class: 'settings',
     },
   },
   {
     tag: 'div',
     attributes: {
-      class: 'greeting__titleContainer',
+      class: 'settings__titleContainer',
     },
     parent: 0,
   },
   {
     tag: 'span',
     attributes: {
-      class: 'greeting__title',
+      class: 'settings__title',
     },
     parent: 1,
   },
   {
     tag: 'span',
     attributes: {
-      class: 'greeting__name',
+      class: 'settings__name',
       contenteditable: 'true',
     },
     parent: 1,
@@ -45,49 +44,49 @@ const items = [
   {
     tag: 'div',
     attributes: {
-      class: 'greeting__soundContainer',
+      class: 'settings__soundContainer',
     },
     parent: 0,
   },
   {
     tag: 'p',
     attributes: {
-      class: 'greeting__sound',
-    },
-    parent: 4,
-  },
-  {
-    tag: 'button',
-    attributes: {
-      class: 'greeting__btnSound',
+      class: 'settings__sound',
     },
     parent: 4,
   },
   {
     tag: 'div',
     attributes: {
-      class: 'greeting__chipTypeContainer',
+      class: 'settings__btnSound',
+    },
+    parent: 4,
+  },
+  {
+    tag: 'div',
+    attributes: {
+      class: 'settings__chipTypeContainer',
     },
     parent: 0,
   },
   {
     tag: 'p',
     attributes: {
-      class: 'greeting__chipTypeTitle',
+      class: 'settings__chipTypeTitle',
     },
     parent: 7,
   },
   {
     tag: 'div',
     attributes: {
-      class: 'greeting__types',
+      class: 'settings__types',
     },
     parent: 7,
   },
   {
     tag: 'div',
     attributes: {
-      class: 'greeting__chipType',
+      class: 'settings__chipType btnAnimated',
       'data-type': 'type1',
     },
     parent: 9,
@@ -95,7 +94,7 @@ const items = [
   {
     tag: 'div',
     attributes: {
-      class: 'greeting__chipType',
+      class: 'settings__chipType btnAnimated',
       'data-type': 'type2',
     },
     parent: 9,
@@ -103,7 +102,7 @@ const items = [
   {
     tag: 'div',
     attributes: {
-      class: 'greeting__chipType',
+      class: 'settings__chipType btnAnimated',
       'data-type': 'typeImage',
     },
     parent: 9,
@@ -111,7 +110,7 @@ const items = [
   {
     tag: 'div',
     attributes: {
-      class: 'greeting__chipType',
+      class: 'settings__chipType btnAnimated',
       'data-type': 'typeNone',
     },
     parent: 9,
@@ -119,28 +118,28 @@ const items = [
   {
     tag: 'div',
     attributes: {
-      class: 'greeting__sizeContainer',
+      class: 'settings__sizeContainer',
     },
     parent: 0,
   },
   {
     tag: 'p',
     attributes: {
-      class: 'greeting__sizeTitle',
+      class: 'settings__sizeTitle',
     },
     parent: 14,
   },
   {
     tag: 'div',
     attributes: {
-      class: 'greeting__sizes',
+      class: 'settings__sizes',
     },
     parent: 14,
   },
   {
     tag: 'button',
     attributes: {
-      class: 'greeting__size3',
+      class: 'settings__size3 settings__size btnAnimated',
       'data-defaultSize': 3,
     },
     parent: 16,
@@ -148,7 +147,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'greeting__size4',
+      class: 'settings__size4 settings__size btnAnimated',
       'data-defaultSize': 4,
     },
     parent: 16,
@@ -156,7 +155,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'greeting__size5',
+      class: 'settings__size5 settings__size btnAnimated',
       'data-defaultSize': 5,
     },
     parent: 16,
@@ -164,7 +163,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'greeting__size6',
+      class: 'settings__size6 settings__size btnAnimated',
       'data-defaultSize': 6,
     },
     parent: 16,
@@ -172,7 +171,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'greeting__size7',
+      class: 'settings__size7 settings__size btnAnimated',
       'data-defaultSize': 7,
     },
     parent: 16,
@@ -180,7 +179,7 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'greeting__size8',
+      class: 'settings__size8 settings__size btnAnimated',
       'data-defaultSize': 8,
     },
     parent: 16,
@@ -188,9 +187,31 @@ const items = [
   {
     tag: 'button',
     attributes: {
-      class: 'greeting__btnSave',
+      class: 'settings__btnSave btnAnimated',
     },
     parent: 0,
+  },
+  {
+    tag: 'input',
+    attributes: {
+      class: 'settings__soundCheckBox',
+      type: 'checkbox',
+    },
+    parent: 6,
+  },
+  {
+    tag: 'div',
+    attributes: {
+      class: 'settings__soundKnobs',
+    },
+    parent: 6,
+  },
+  {
+    tag: 'div',
+    attributes: {
+      class: 'settings__soundLayer',
+    },
+    parent: 6,
   },
 ]
 

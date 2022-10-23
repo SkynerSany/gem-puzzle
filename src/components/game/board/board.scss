@@ -8,8 +8,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
 
-  background-color: rgb(86, 86, 86);
-  border: 2px solid black;
+  background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
 
   z-index: 0;
 }
@@ -24,6 +23,24 @@
   font-weight: 700;
   font-family: roboto;
   user-select: none;
+  -webkit-text-stroke: 2px #000000;
+  color: transparent;
+
+  &.chip-type {
+    &1 {
+      background: url(../../../assets/images/type1.jpg);
+      background-size: cover;
+    }
+
+    &2 {
+      background: url(../../../assets/images/type2.jpg);
+      background-size: cover;
+    }
+
+    &none {
+      background: #ffffff;
+    }
+  }
 
   &-clear {
     background: none;
