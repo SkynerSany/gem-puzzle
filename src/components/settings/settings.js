@@ -59,6 +59,12 @@ export default class Settings {
   setWindow() {
     new CreateDomElement().addToDOM(settingsData, '.container');
     this.setEvents();
+
+    if (!localStorage.settings) {
+      localStorage.settings = '{"name": "[Your Name]", "sound": "true", "chipType": "type1", "size": "4"}';
+      this.openSettings();
+    }
+    
     this.storage = JSON.parse(localStorage.settings);
     this.setSettings();
   }

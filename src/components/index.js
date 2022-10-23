@@ -14,11 +14,6 @@ createContainer.addToDOM(containerData, 'body');
 
 settings.setWindow();
 
-if (!localStorage.settings) {
-  localStorage.settings = '{"name": "[Your Name]", "sound": "true", "chipType": "type1", "size": "4"}';
-  settings.openSettings();
-}
-
 newGame.setNewGame();
 menu.setEvents(settings);
 
