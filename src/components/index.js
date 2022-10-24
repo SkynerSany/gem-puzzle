@@ -10,10 +10,12 @@ const createContainer = new CreateDomElement();
 const newGame = new Game();
 const menu = new Menu(newGame);
 
-createContainer.addToDOM(containerData, 'body');
+window.onload = () => {
+  createContainer.addToDOM(containerData, 'body');
 
-settings.setWindow();
-
-newGame.setNewGame();
-menu.setEvents(settings);
+  settings.setWindow();
+  
+  newGame.setNewGame();
+  menu.setEvents(settings);
+}
 
