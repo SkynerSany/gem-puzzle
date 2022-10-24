@@ -1,11 +1,13 @@
 .saved {
   width: -webkit-fill-available;
   height: -webkit-fill-available;
+
   padding: 50px;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,12 +15,20 @@
   background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
 
   color: #ffffff;
+
+  @media screen and (max-width: 600px) {
+    padding: 8.33vw;
+  }
 }
 
 .saved__title {
   margin: 0 0 20px;
-
   font-size: 48px;
+
+  @media screen and (max-width: 600px) {
+    margin: 0 0 3.33vw;
+    font-size: 8vw;
+  }
 }
 
 .saved__table {
@@ -26,6 +36,10 @@
   height: 390px;
 
   overflow: auto;
+
+  @media screen and (max-width: 600px) {
+    height: 65vw;
+  }
 
   &::-webkit-scrollbar{
     width: 0;
@@ -46,9 +60,19 @@
   
   font-size: 24px;
   font-weight: 600;
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 0.83vw;
+    box-shadow: 0px 0px 1.17vw 0px #00c4f0;
+    font-size: 4vw;
+  }
   
   p {
     margin: 10px 0;
+
+    @media screen and (max-width: 600px) {
+      margin: 1.67vw 0;
+    }
   }
 }
 
@@ -60,6 +84,12 @@
   align-items: center;
 }
 
+.saved__save {
+  @media screen and (max-width: 600px) {
+    font-size: 3.33vw;
+  }
+}
+
 .saved__btnClose {
   height: 55px;
   width: 60%;
@@ -67,6 +97,12 @@
   margin-top: 20px;
 
   font-size: 24px;
+
+  @media screen and (max-width: 600px) {
+    height: 9.17vw;
+    margin-top: 3.33vw;
+    font-size: 4vw;
+  }
 }
 
 .saved__saveLoad {
@@ -74,4 +110,8 @@
   width: 95%;
 
   font-size: 20px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3.33vw;
+  }
 }

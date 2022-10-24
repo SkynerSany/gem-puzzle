@@ -1,17 +1,22 @@
 .menu {
   width: -webkit-fill-available;
   height: -webkit-fill-available;
+
   padding: 50px;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
 
-  z-index: 1;
+  @media screen and (max-width: 600px) {
+    padding: 8.33vw;
+  }
 
   button {
     height: 60px;
@@ -20,6 +25,12 @@
     font-size: 24px;
     color: #00C4F0;
     background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
+
+    @media screen and (max-width: 600px) {
+      height: 10vw;
+      width: 50vw;
+      font-size: 4vw;
+    }
 
     &::after {
       background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
@@ -34,6 +45,13 @@
     top: 10px;
     left: 10px;
     background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
+
+    @media screen and (max-width: 600px) {
+      height: 10vw;
+      width: 10vw;
+      top: 1.67vw;
+      left: 1.67vw;
+    }
     
     &::after {
       background-image: url(../../assets/icons/save_icon.svg);
@@ -41,6 +59,10 @@
       background-size: 40px;
       background-repeat: no-repeat;
       background-position: center;
+
+      @media screen and (max-width: 600px) {
+        background-size: 6.67vw;
+      }
     }
 
     &:active {
@@ -57,8 +79,4 @@
   &-hidden {
     display: none;
   }
-}
-
-.menu__btnStart {
-
 }

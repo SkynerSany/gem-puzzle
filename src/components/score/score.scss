@@ -15,12 +15,20 @@
   background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
 
   color: #ffffff;
+
+  @media screen and (max-width: 600px) {
+    padding: 8.33vw;
+  }
 }
 
 .scores__title {
   margin: 0 0 10px;
-
   font-size: 48px;
+
+  @media screen and (max-width: 600px) {
+    margin: 0 0 1.67vw;
+    font-size: 8vw;
+  }
 }
 
 .scores__btnContainer {
@@ -31,10 +39,20 @@
   grid-template-columns: repeat(6, 1fr);
   justify-items: center;
 
+  @media screen and (max-width: 600px) {
+    margin: 0 0 1.67vw;
+  }
+
   button {
     height: 30px;
     width: 70px;
     font-size: 20px;
+
+    @media screen and (max-width: 600px) {
+      height: 5vw;
+      width: 11.67vw;
+      font-size: 3.33vw;
+    }
   }
 }
 
@@ -43,6 +61,10 @@
   height: 390px;
 
   overflow: auto;
+
+  @media screen and (max-width: 600px) {
+    height: 65vw;
+  }
   
   &::-webkit-scrollbar{
     width: 0;
@@ -60,9 +82,18 @@
 
   font-size: 24px;
   font-weight: 600;
+
+  @media screen and (max-width: 600px) {
+    box-shadow: 0px 0px 1.17vw 0px #00c4f0;
+    font-size: 4vw;
+  }
   
   p {
     margin: 10px 0;
+
+    @media screen and (max-width: 600px) {
+      margin: 1.67vw 0;
+    }
   }
 }
 
@@ -76,6 +107,10 @@
 
 .scores__score {
   font-size: 20px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3.33vw;
+  }
 }
 
 .scores__btnClose {
@@ -88,4 +123,11 @@
   border: none;
   outline: none;
   font-size: 24px;
+
+  @media screen and (max-width: 600px) {
+    height: 9.17vw;
+    margin-top: 3.33vw;
+    border-radius: 1.67vw;
+    font-size: 4vw;
+  }
 }

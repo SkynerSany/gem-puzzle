@@ -15,6 +15,10 @@
   background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
 
   color: #ffffff;
+
+  @media screen and (max-width: 600px) {
+    padding: 8.33vw;
+  }
 }
 
 .rules__title {
@@ -22,10 +26,19 @@
 
   font-size: 48px;
   font-weight: 600;
+
+  @media screen and (max-width: 600px) {
+    margin: 0 0 1.67vw;
+    font-size: 8vw;
+  }
 }
 
 .rules__descriptionBox {
   font-size: 24px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 4vw;
+  }
 }
 
 .rules__descriptionPs {
@@ -42,4 +55,11 @@
   border: none;
   outline: none;
   font-size: 24px;
+
+  @media screen and (max-width: 600px) {
+    height: 9.17vw;
+    margin-top: 3.33vw;
+    border-radius: 1.67vw;
+    font-size: 4vw;
+  }
 }

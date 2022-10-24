@@ -1,17 +1,26 @@
 .header {
   margin: 20px;
+  z-index: 0;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
   gap: 10px;
 
-  z-index: 0;
+  @media screen and (max-width: 600px) {
+    margin: 3.33vw;
+    gap: 1.67vw;
+  }
 }
 
 .header__autoSolve {
   font-size: 20px;
   box-shadow: none;
+  
+  @media screen and (max-width: 600px) {
+    font-size: 3.33vw;
+  }
+
   &:disabled {
     background: #8f8f8f;
     color: #ffffff;
@@ -30,13 +39,27 @@
 .header__time {
   text-align: center;
   color: #ffffff;
+  font-size: 20px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3.33vw;
+  }
 }
 
 .header__steps {
   text-align: center;
   color: #ffffff;
+  font-size: 20px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3.33vw;
+  }
 }
 
 .header__pause {
   font-size: 20px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3.33vw;
+  }
 }

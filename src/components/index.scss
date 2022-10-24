@@ -25,6 +25,10 @@ button {
 .container {
   position: relative;
   box-shadow: 0px 0px 20px 20px #00c4f0;
+
+  @media screen and (max-width: 600px) {
+    box-shadow: 0px 0px 3.33vw 3.33vw #00c4f0;
+  }
 }
 
 @font-face {
@@ -63,6 +67,10 @@ button {
   color: #00C4F0;
   font-weight: 600;
 
+  @media screen and (max-width: 600px) {
+    border-radius: 1.67vw;
+  }
+
   &::after {
     background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
   }
@@ -82,6 +90,14 @@ button {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
+
+    @media screen and (max-width: 600px) {
+      top: -0.33vw;
+      left: -0.33vw;
+      width: calc(100% + 0.67vw);
+      height: calc(100% + 0.67vw);
+      border-radius: 1.67vw;
+    }
   }
 
   &:active {
@@ -106,6 +122,10 @@ button {
     left: 0;
     top: 0;
     border-radius: 10px;
+
+    @media screen and (max-width: 600px) {
+      border-radius: 1.67vw;
+    }
   }
 }
 
