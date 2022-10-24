@@ -30,7 +30,7 @@
   font-family: roboto;
   user-select: none;
   -webkit-text-stroke: 2px #000000;
-  color: transparent;
+  color: #00c4f0;
 
   @media screen and (max-width: 600px) {
     font-size: 8vw;
@@ -46,6 +46,14 @@
     &2 {
       background: url(../../../assets/images/type2.jpg);
       background-size: cover;
+    }
+
+    &Image {
+      background-size: 600px!important;
+
+      @media screen and (max-width: 600px) {
+        background-size: 100vw!important;;
+      }
     }
 
     &none {

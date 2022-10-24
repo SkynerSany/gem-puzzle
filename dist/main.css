@@ -99,6 +99,14 @@ button {
     @media screen and (max-width: 600px) {
       .btnAnimated:after {
         border-radius: 1.67vw; } }
+  .btnAnimated:disabled {
+    background: #8f8f8f;
+    color: #ffffff;
+    cursor: default; }
+    .btnAnimated:disabled::after {
+      display: none; }
+    .btnAnimated:disabled::before {
+      display: none; }
 
 @keyframes glowingbn5 {
   0% {
@@ -137,7 +145,7 @@ button {
   font-family: roboto;
   user-select: none;
   -webkit-text-stroke: 2px #000000;
-  color: transparent; }
+  color: #00c4f0; }
   @media screen and (max-width: 600px) {
     .game__chip {
       font-size: 8vw;
@@ -148,6 +156,11 @@ button {
   .game__chip.chip-type2 {
     background: url(22d75a75582c5abd53a2.jpg);
     background-size: cover; }
+  .game__chip.chip-typeImage {
+    background-size: 600px !important; }
+    @media screen and (max-width: 600px) {
+      .game__chip.chip-typeImage {
+        background-size: 100vw !important; } }
   .game__chip.chip-typenone {
     background: #ffffff; }
   .game__chip-clear {
@@ -171,7 +184,8 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%); }
+  background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
+  background-size: cover !important; }
   @media screen and (max-width: 600px) {
     .finish {
       padding: 8.33vw; } }
@@ -180,7 +194,8 @@ button {
   font-size: 48px;
   font-weight: 600;
   text-align: center;
-  color: #00c4f0; }
+  color: #00c4f0;
+  text-shadow: 0 0 2px black; }
   @media screen and (max-width: 600px) {
     .finish__congratulation {
       font-size: 8vw; } }
@@ -545,14 +560,6 @@ button {
   @media screen and (max-width: 600px) {
     .header__autoSolve {
       font-size: 3.33vw; } }
-  .header__autoSolve:disabled {
-    background: #8f8f8f;
-    color: #ffffff;
-    cursor: default; }
-    .header__autoSolve:disabled::after {
-      display: none; }
-    .header__autoSolve:disabled::before {
-      display: none; }
 
 .header__time {
   text-align: center;

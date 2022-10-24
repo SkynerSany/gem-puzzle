@@ -127,6 +127,20 @@ button {
       border-radius: 1.67vw;
     }
   }
+
+  &:disabled {
+    background: #8f8f8f;
+    color: #ffffff;
+    cursor: default;
+
+    &::after {
+      display:none;
+    }
+
+    &::before {
+      display:none;
+    }
+  }
 }
 
 @keyframes glowingbn5 {

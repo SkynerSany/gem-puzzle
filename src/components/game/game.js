@@ -5,7 +5,7 @@ import GameEvents from "./gameEvents";
 import Header from "./header/header";
 
 export default class Game {
-  setNewGame(size, step, time, chipsArr, type, sound) {
+  setNewGame(size, step, time, chipsArr, type, sound, bgImage) {
     this.storage = JSON.parse(localStorage.settings);
 
     this.setDefault(size, step, time, type, sound);
@@ -17,11 +17,16 @@ export default class Game {
     this.finish = new Finish(this);
     
     this.header.setEvents();
-    this.board.createBoard(chipsArr);
+    this.board.createBoard(chipsArr, bgImage);
     this.gameEvents.setEvents();
   }
 
-  setDefault(size = +this.storage.size, step = 0, time = { minutes: 0, seconds: 0 }, type = this.storage.chipType, sound = this.storage.sound) {
+  setDefault(size = +this.storage.size, 
+    step = 0, 
+    time = { minutes: 0, seconds: 0 }, 
+    type = this.storage.chipType, 
+    sound = this.storage.sound, 
+  ) {
     this.step = step;
     this.time = time;
     this.size = size;

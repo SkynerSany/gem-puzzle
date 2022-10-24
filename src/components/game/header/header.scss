@@ -20,20 +20,6 @@
   @media screen and (max-width: 600px) {
     font-size: 3.33vw;
   }
-
-  &:disabled {
-    background: #8f8f8f;
-    color: #ffffff;
-    cursor: default;
-
-    &::after {
-      display:none;
-    }
-
-    &::before {
-      display:none;
-    }
-  }
 }
 
 .header__time {

@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: space-around;
   background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
+  background-size: cover!important;
 
   @media screen and (max-width: 600px) {
     padding: 8.33vw;
@@ -25,6 +26,7 @@
   font-weight: 600;
   text-align: center;
   color: #00c4f0;
+  text-shadow: 0 0 2px black;
 
   @media screen and (max-width: 600px) {
     font-size: 8vw;

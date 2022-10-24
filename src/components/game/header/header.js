@@ -48,8 +48,14 @@ export default class Header {
     clearInterval(this.timer);
   }
 
+  setDisabled(node) {
+    document.querySelector(node).disabled = true;
+  }
+
   startAutoSolve() {
     this.game.autoSolve.startSolve();
+    this.setDisabled('.header__pause');
+    this.setDisabled('.header__autoSolve');
   }
 
   setAuto() {

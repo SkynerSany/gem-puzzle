@@ -62,9 +62,14 @@ export default class Finish {
     document.querySelector('.finish__close').addEventListener('click', () => this.clickClose());
   }
 
+  setBackground() {
+    document.querySelector('.finish').style.background = this.game.board.bgImage;
+  }
+
   setWindow() {
     new CreateDomElement().addToDOM(finishData, '.container');
     this.setCongratulation()
+    if (this.game.type === 'typeImage') this.setBackground(); 
     this.menu = new Menu();
     this.setEvents();
     this.saveScore();

@@ -40,10 +40,10 @@ export default class Menu {
     document.querySelector('.menu').style.display = 'flex';
   }
 
-  startNewGame(size, step, time, chipsArr, type, sound) {
+  startNewGame(size, step, time, chipsArr, type, sound, bgImage) {
     this.clearBoard();
     this.game = new Game();
-    this.game.setNewGame(size, step, time, chipsArr, type, sound);
+    this.game.setNewGame(size, step, time, chipsArr, type, sound, bgImage);
     this.game.header.setTimer();
     this.closeMenu();
   }
@@ -66,6 +66,7 @@ export default class Menu {
       time: this.game.time,
       type: this.game.type,
       sound: this.game.sound,
+      bgImage: this.game.board.bgImage,
       chipsArr,
     });
   

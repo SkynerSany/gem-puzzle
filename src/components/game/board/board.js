@@ -23,6 +23,15 @@ export default class Board {
     return count % 2 === 0;
   }
 
+  getImgPosition() {
+    this.arrImgPositions = [];
+    for (let i = 0; i < this.game.size; i++) {
+      for (let j = 0; j < this.game.size; j++) {
+        this.arrImgPositions.push(`${99 * (j / (this.game.size - 1))}% ${99 * (i / (this.game.size - 1))}%`);
+      }
+    }
+  }
+
   getNumbers() {
     let numbers = [];
     for (let i = 0; i < this.game.size**2; i += 1) {
@@ -46,26 +55,35 @@ export default class Board {
     return count === arr.length - 1;
   }
 
-  setNumbers(numbers) {
+  setNumbers(numbers, bgImage) {
     const planks = document.querySelectorAll('.game__chip')
+    this.bgImage = bgImage || `url(./src/assets/pictures/${Math.floor(Math.random() * 150)}.jpg)`;
 
     planks.forEach((plank, i) => {
       plank.setAttribute('data-id', numbers[i]);
       plank.textContent = numbers[i] ? numbers[i] : '';
+      
       if (!numbers[i]) {
         plank.classList.toggle('game__chip-clear');
         return;
       }
+
       plank.setAttribute('draggable', true);
       plank.classList.toggle(`chip-${this.game.type}`);
+
+      if (this.game.type === 'typeImage') {
+        this.getImgPosition();
+        plank.style.background = this.bgImage;
+        plank.style.backgroundPosition = this.arrImgPositions[numbers[i] - 1];
+      }
     })
   }
 
-  createBoard(chipArr) {
+  createBoard(chipArr, bgImage) {
     new CreateDomElement().addToDOM(gameData, '.container', this.game.size);
     document.querySelector('.game').style.gridTemplateColumns = `repeat(${this.game.size}, 1fr)`;
 
     const numbersArr = this.getNumbers();
-    this.setNumbers(chipArr || numbersArr);
+    this.setNumbers(chipArr || numbersArr, bgImage);
   }
 };

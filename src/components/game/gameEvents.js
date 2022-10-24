@@ -89,12 +89,15 @@ export default class GameEvents {
 
     clearChip.classList.toggle('game__chip-clear');
     clearChip.classList.toggle(`chip-${this.game.type}`);
+    clearChip.style.background= getComputedStyle(chip).background;
+    clearChip.style.backgroundPosition = getComputedStyle(chip).backgroundPosition
     clearChip.draggable = true;
     clearChip.dataset.id = chip.dataset.id;
     clearChip.textContent = chip.textContent;
 
     chip.classList.toggle('game__chip-clear');
     chip.classList.toggle(`chip-${this.game.type}`);
+    chip.style.background = 'none';
     chip.draggable = false;
     chip.dataset.id = '0';
     chip.textContent = '';
